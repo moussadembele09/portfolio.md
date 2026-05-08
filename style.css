@@ -209,7 +209,7 @@ body:has(button:hover) .cursor-ring {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
 }
 .project-info { margin-bottom: 2rem; }
 .project-num {
@@ -240,11 +240,12 @@ body:has(button:hover) .cursor-ring {
 .editorial-grid {
   position: relative;
   width: 100%;
-  height: clamp(500px, 70vh, 700px);
+  height: clamp(550px, 80vh, 800px);
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 4rem;
+  margin-top: 2rem;
+  overflow: visible;
 }
 
 .eg-item {
@@ -261,8 +262,8 @@ body:has(button:hover) .cursor-ring {
 
 /* Stacking effect */
 .eg-item:nth-child(1) { z-index: 5; transform: rotate(0deg); }
-.eg-item:nth-child(2) { z-index: 4; transform: translate(15px, 10px) rotate(3deg); }
-.eg-item:nth-child(3) { z-index: 3; transform: translate(-15px, 5px) rotate(-3deg); }
+.eg-item:nth-child(2) { z-index: 4; transform: translate(10px, 5px) rotate(2deg); }
+.eg-item:nth-child(3) { z-index: 3; transform: translate(-10px, 5px) rotate(-2deg); }
 .eg-item:nth-child(n+4) { z-index: 2; transform: scale(0.95); opacity: 0.3; }
 
 /* Hover effect: Spread the pile */
@@ -273,6 +274,7 @@ body:has(button:hover) .cursor-ring {
 .eg-item img {
   width: 100%; height: 100%;
   object-fit: cover;
+  object-position: center 20%;
   transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.5s;
   filter: grayscale(15%);
 }
@@ -531,7 +533,7 @@ footer {
 
   .project { padding: 5rem 2rem; }
   .project-header { grid-template-columns: 1fr; gap: 2rem; margin-bottom: 4rem; }
-  .editorial-grid { height: 500px; margin-top: 2rem; }
+  .editorial-grid { height: clamp(450px, 65vh, 600px); margin-top: 1rem; overflow: visible; }
 
   .about-section { padding: 5rem 2rem; text-align: center; }
   .about-text-col { display: flex; flex-direction: column; align-items: center; }

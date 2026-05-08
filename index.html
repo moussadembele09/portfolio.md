@@ -11,15 +11,6 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="portfolio.css" />
 </head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Moussa Dembele — Photographe Paris</title>
-  <meta name="description" content="Portfolio de Moussa Dembele — Photographe basé à Paris. Sport, portrait street, photographie urbaine." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-</head>
 <body>
 
   <!-- ═══════════════ NAV ═══════════════ -->
@@ -100,26 +91,23 @@
         </p>
       </div>
 
-      <div class="photo-stack">
-        <div class="eg-item" data-proj="courtside" data-title="Focus" data-sub="Regard du joueur">
-          <img src="gallery/basket-focus.jpg" alt="Focus" loading="lazy" />
+      <div class="editorial-grid">
+        <!-- Face-centered portraits -->
+        <div class="eg-item eg-wide" data-proj="courtside" data-title="Focus" data-sub="Regard du joueur">
+          <img src="gallery/basket-focus.jpg" alt="Focus" class="crop-center" loading="lazy" />
           <div class="eg-hover"><span>Focus</span></div>
         </div>
-        <div class="eg-item" data-proj="courtside" data-title="Action" data-sub="Face">
-          <img src="gallery/basket-action.jpg" alt="Action" loading="lazy" />
+        <div class="eg-item eg-tall" data-proj="courtside" data-title="Action" data-sub="Face">
+          <img src="gallery/basket-action.jpg" alt="Action" class="crop-center" loading="lazy" />
           <div class="eg-hover"><span>Action</span></div>
         </div>
         <div class="eg-item" data-proj="courtside" data-title="Smile" data-sub="Portrait">
-          <img src="gallery/basket-smile.jpg" alt="Smile" loading="lazy" />
+          <img src="gallery/basket-smile.jpg" alt="Smile" class="crop-center" loading="lazy" />
           <div class="eg-hover"><span>Smile</span></div>
         </div>
-        <div class="eg-item" data-proj="courtside" data-title="Side Step" data-sub="Profil">
-          <img src="gallery/basket-side.jpg" alt="Side Step" loading="lazy" />
+        <div class="eg-item" data-proj="courtside" data-title="Side Step" data-sub="Profile">
+          <img src="gallery/basket-side.jpg" alt="Side Step" class="crop-center" loading="lazy" />
           <div class="eg-hover"><span>Side Step</span></div>
-        </div>
-        <div class="eg-item" data-proj="courtside" data-title="Dribble" data-sub="En action">
-          <img src="gallery/basket-dribble.jpg" alt="Dribble" loading="lazy" />
-          <div class="eg-hover"><span>Dribble</span></div>
         </div>
       </div>
     </section>
@@ -141,25 +129,28 @@
         </p>
       </div>
 
-      <div class="photo-stack">
-        <div class="eg-item" data-proj="seine" data-title="Courtside from the River" data-sub="Barge bleue, terrain Nike">
-          <img src="gallery/basket-bateau.jpg" alt="Courtside from the River" loading="lazy" />
+      <div class="editorial-grid">
+        <!-- Featured large : barge + terrain Courtside en fond -->
+        <div class="eg-item eg-wide" data-proj="seine" data-title="Courtside from the River" data-sub="Barge bleue, terrain Nike">
+          <img src="gallery/basket-bateau.jpg" alt="Courtside from the River" class="crop-center" loading="lazy" />
           <div class="eg-hover"><span>Courtside from the River</span></div>
         </div>
-        <div class="eg-item" data-proj="seine" data-title="Filomène" data-sub="Péniche orange">
-          <img src="gallery/basket-seine.jpg" alt="Filomène" loading="lazy" />
+        <div class="eg-item eg-tall" data-proj="seine" data-title="Filomène" data-sub="Péniche orange">
+          <img src="gallery/basket-seine.jpg" alt="Filomène" class="crop-center" loading="lazy" />
           <div class="eg-hover"><span>Filomène</span></div>
         </div>
-        <div class="eg-item" data-proj="seine" data-title="La Barge" data-sub="Quai de la Seine">
-          <img src="gallery/basket-terrain.jpg" alt="La Barge" loading="lazy" />
+
+        <!-- Row 2 -->
+        <div class="eg-item eg-wide" data-proj="seine" data-title="La Barge" data-sub="Quai de la Seine">
+          <img src="gallery/basket-terrain.jpg" alt="La Barge" class="crop-center" loading="lazy" />
           <div class="eg-hover"><span>La Barge</span></div>
         </div>
         <div class="eg-item" data-proj="seine" data-title="Reflets" data-sub="Seine">
-          <img src="gallery/basket-equipe.jpg" alt="Reflets" loading="lazy" />
+          <img src="gallery/basket-equipe.jpg" alt="Reflets" class="crop-center" loading="lazy" />
           <div class="eg-hover"><span>Reflets</span></div>
         </div>
         <div class="eg-item" data-proj="seine" data-title="Pause" data-sub="Bord de quai">
-          <img src="gallery/basket-pause.jpg" alt="Pause" loading="lazy" />
+          <img src="gallery/basket-pause.jpg" alt="Pause" class="crop-center" loading="lazy" />
           <div class="eg-hover"><span>Pause</span></div>
         </div>
       </div>
@@ -182,37 +173,41 @@
         </p>
       </div>
 
-      <div class="photo-stack">
-        <div class="eg-item" data-proj="sesse" data-title="Paris is Red" data-sub="Portrait street">
-          <img src="gallery/portrait-1.jpg" alt="Paris is Red" loading="lazy" />
+      <div class="editorial-grid">
+        <!-- Featured portrait tall (2 rows) -->
+        <div class="eg-item eg-tall" data-proj="sesse" data-title="Paris is Red" data-sub="Portrait street">
+          <img src="gallery/portrait-1.jpg" alt="Paris is Red" class="crop-center" loading="lazy" />
           <div class="eg-hover"><span>Paris is Red</span></div>
         </div>
-        <div class="eg-item" data-proj="sesse" data-title="Full Length" data-sub="Corps entier">
-          <img src="gallery/sesse-full.jpg" alt="Full Length" loading="lazy" />
+        <!-- Side shots -->
+        <div class="eg-item eg-wide" data-proj="sesse" data-title="Full Length" data-sub="Corps entier">
+          <img src="gallery/sesse-full.jpg" alt="Full Length" class="crop-center" loading="lazy" />
           <div class="eg-hover"><span>Full Length</span></div>
         </div>
         <div class="eg-item" data-proj="sesse" data-title="Tram" data-sub="Motion blur">
-          <img src="gallery/sesse-tram.jpg" alt="Tram" loading="lazy" />
+          <img src="gallery/sesse-tram.jpg" alt="Tram" class="crop-center" loading="lazy" />
           <div class="eg-hover"><span>Tram</span></div>
         </div>
         <div class="eg-item" data-proj="sesse" data-title="3/4" data-sub="Vue de profil">
-          <img src="gallery/sesse-3q.jpg" alt="3/4" loading="lazy" />
+          <img src="gallery/sesse-3q.jpg" alt="3/4" class="crop-center" loading="lazy" />
           <div class="eg-hover"><span>3/4</span></div>
         </div>
+
+        <!-- Row 3 : close-ups + full -->
         <div class="eg-item" data-proj="sesse" data-title="Close" data-sub="Portrait serré">
-          <img src="gallery/portrait-2.jpg" alt="Close" loading="lazy" />
+          <img src="gallery/portrait-2.jpg" alt="Close" class="crop-center" loading="lazy" />
           <div class="eg-hover"><span>Close</span></div>
         </div>
         <div class="eg-item" data-proj="sesse" data-title="Pole" data-sub="Appui poteau">
-          <img src="gallery/sesse-pole.jpg" alt="Pole" loading="lazy" />
+          <img src="gallery/sesse-pole.jpg" alt="Pole" class="crop-center" loading="lazy" />
           <div class="eg-hover"><span>Pole</span></div>
         </div>
         <div class="eg-item" data-proj="sesse" data-title="Urban Style" data-sub="Rue mouillée">
-          <img src="gallery/portrait-3.jpg" alt="Urban Style" loading="lazy" />
+          <img src="gallery/portrait-3.jpg" alt="Urban Style" class="crop-center" loading="lazy" />
           <div class="eg-hover"><span>Urban Style</span></div>
         </div>
         <div class="eg-item" data-proj="sesse" data-title="Full Frame" data-sub="Rue Paris">
-          <img src="gallery/portrait-4.jpg" alt="Full Frame" loading="lazy" />
+          <img src="gallery/portrait-4.jpg" alt="Full Frame" class="crop-center" loading="lazy" />
           <div class="eg-hover"><span>Full Frame</span></div>
         </div>
       </div>
