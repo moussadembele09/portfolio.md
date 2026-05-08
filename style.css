@@ -497,8 +497,11 @@ footer {
   .nav-links.open { right: 0; }
   .nav-toggle { display: flex; cursor: pointer; z-index: 100; position: relative; }
 
+  .hero { height: auto; min-height: auto; grid-template-rows: auto 1fr; }
   .hero-title { font-size: clamp(4rem, 15vw, 6rem); }
   .hero-text-container { padding: 8rem 2rem 4rem; }
+  .hero-image-container { height: 60vh; min-height: 450px; }
+  .hero-img { object-position: center 25%; }
 
   .intro { padding: 5rem 2rem; }
   .intro-inner { flex-direction: column; gap: 3rem; }
