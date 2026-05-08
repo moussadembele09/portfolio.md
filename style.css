@@ -205,34 +205,35 @@ body:has(button:hover) .cursor-ring {
 .project { padding: 8rem 4rem; max-width: 1600px; margin: 0 auto; }
 
 .project-header {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem; align-items: end;
-  margin-bottom: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 5rem;
 }
-.project-info { }
+.project-info { margin-bottom: 2rem; }
 .project-num {
-  font-size: 0.75rem; text-transform: uppercase;
-  letter-spacing: 0.2em; color: var(--accent);
-  display: block; margin-bottom: 1.5rem;
+  font-size: 0.8rem; text-transform: uppercase;
+  letter-spacing: 0.3em; color: var(--accent);
+  display: block; margin-bottom: 1rem;
   font-weight: 500;
 }
 .project-title {
   font-family: var(--serif);
-  font-size: clamp(4rem, 8vw, 7rem);
-  font-weight: 400; line-height: 0.9;
+  font-size: clamp(3.5rem, 7vw, 6.5rem);
+  font-weight: 400; line-height: 1;
   color: var(--text);
 }
 .project-sub {
-  font-size: 0.8rem; text-transform: uppercase;
-  letter-spacing: 0.15em; color: var(--text);
-  margin-top: 1.5rem;
+  font-size: 0.75rem; text-transform: uppercase;
+  letter-spacing: 0.2em; color: var(--muted);
+  margin-top: 1rem;
 }
 .project-desc {
-  font-size: 1.1rem; color: var(--muted);
+  font-size: 1.05rem; color: var(--muted);
   line-height: 1.8; font-weight: 400;
-  max-width: 500px;
-  justify-self: end;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 /* ── Editorial Stacked Layout (Photo Pile) ── */
@@ -518,12 +519,13 @@ footer {
 
   .hero { height: auto; min-height: auto; grid-template-rows: auto 1fr; }
   .hero-title { font-size: clamp(4rem, 15vw, 6rem); }
-  .hero-text-container { padding: 8rem 2rem 4rem; }
+  .hero-text-container { padding: 8rem 2rem 4rem; text-align: center; align-items: center; }
+  .hero-role { margin-left: auto; margin-right: auto; }
   .hero-image-container { height: 60vh; min-height: 450px; }
   .hero-img { object-position: center 25%; }
 
-  .intro { padding: 5rem 2rem; }
-  .intro-inner { flex-direction: column; gap: 3rem; }
+  .intro { padding: 5rem 2rem; text-align: center; }
+  .intro-inner { flex-direction: column; gap: 3rem; align-items: center; }
   .intro-meta { flex-direction: column; gap: 2rem; width: 100%; }
   .meta-item { border-top: none; border-left: 1px solid var(--border); padding-top: 0; padding-left: 1.5rem; }
 
@@ -531,7 +533,8 @@ footer {
   .project-header { grid-template-columns: 1fr; gap: 2rem; margin-bottom: 4rem; }
   .editorial-grid { height: 500px; margin-top: 2rem; }
 
-  .about-section { padding: 5rem 2rem; }
+  .about-section { padding: 5rem 2rem; text-align: center; }
+  .about-text-col { display: flex; flex-direction: column; align-items: center; }
   
   .insta-section { padding: 5rem 2rem; }
   
