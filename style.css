@@ -235,30 +235,63 @@ body:has(button:hover) .cursor-ring {
   justify-self: end;
 }
 
-/* ── Editorial Masonry Grid (Pinterest Style) ── */
-.editorial-grid {
-  column-count: 3;
-  column-gap: 3rem;
+/* ── Photo Stack Layout ── */
+.photo-stack {
+  position: relative;
   width: 100%;
+  max-width: 420px;
+  height: 560px;
+  margin: 0 auto;
 }
 
 .eg-item {
-  position: relative;
+  position: absolute;
+  inset: 0;
   overflow: hidden;
-  break-inside: avoid;
-  margin-bottom: 3rem;
   cursor: none;
   background: var(--bg-alt);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s ease;
+}
+
+/* Stack rotation — back cards peek out */
+.eg-item:nth-child(1) { transform: rotate(0deg) translate(0px, 0px); z-index: 10; }
+.eg-item:nth-child(2) { transform: rotate(4deg) translate(12px, 8px); z-index: 9; }
+.eg-item:nth-child(3) { transform: rotate(-3deg) translate(-10px, 14px); z-index: 8; }
+.eg-item:nth-child(4) { transform: rotate(6deg) translate(18px, 20px); z-index: 7; }
+.eg-item:nth-child(5) { transform: rotate(-5deg) translate(-14px, 26px); z-index: 6; }
+.eg-item:nth-child(n+6) { transform: rotate(7deg) translate(20px, 32px); z-index: 5; opacity: 0.6; }
+
+/* Lift effect on the top card when hovering the stack */
+.photo-stack:hover .eg-item:nth-child(1) {
+  transform: rotate(0deg) translate(0px, -12px);
+  box-shadow: 0 40px 80px rgba(0,0,0,0.7), 0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* Photo counter badge */
+.photo-stack::after {
+  content: attr(data-count);
+  position: absolute;
+  bottom: -2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  white-space: nowrap;
 }
 
 .eg-item img {
-  width: 100%; height: auto;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
   display: block;
   transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.5s;
-  filter: grayscale(15%);
+  filter: grayscale(10%);
 }
-.eg-item:hover img {
-  transform: scale(1.03);
+
+.photo-stack:hover .eg-item:nth-child(1) img {
   filter: grayscale(0%);
 }
 
@@ -267,19 +300,19 @@ body:has(button:hover) .cursor-ring {
   display: flex; flex-direction: column;
   justify-content: flex-end;
   padding: 2rem;
-  background: linear-gradient(to top, rgba(0,0,0,0.5), transparent 40%);
+  background: linear-gradient(to top, rgba(0,0,0,0.65), transparent 45%);
   opacity: 0;
-  transition: opacity 0.5s;
+  transition: opacity 0.4s;
 }
-.eg-item:hover .eg-hover { opacity: 1; }
+.photo-stack:hover .eg-item:nth-child(1) .eg-hover { opacity: 1; }
 .eg-hover span {
   font-family: var(--serif);
   font-size: 1.8rem; font-style: italic;
   color: #fff; font-weight: 400;
-  transform: translateY(10px);
+  transform: translateY(8px);
   transition: transform 0.4s var(--ease);
 }
-.eg-item:hover .eg-hover span {
+.photo-stack:hover .eg-item:nth-child(1) .eg-hover span {
   transform: translateY(0);
 }
 
@@ -477,9 +510,9 @@ footer {
 @media (max-width: 1024px) {
   .hero { grid-template-columns: 1fr; }
   .hero-text-container { padding: 4rem; }
-  .editorial-grid { column-count: 2; }
   .about-grid { grid-template-columns: 1fr; gap: 4rem; }
   .insta-strip { grid-template-columns: repeat(2, 1fr); }
+  .photo-stack { max-width: 360px; height: 480px; }
 }
 
 @media (max-width: 768px) {
@@ -509,8 +542,8 @@ footer {
   .meta-item { border-top: none; border-left: 1px solid var(--border); padding-top: 0; padding-left: 1.5rem; }
 
   .project { padding: 5rem 2rem; }
-  .project-header { grid-template-columns: 1fr; gap: 2rem; margin-bottom: 4rem; }
-  .editorial-grid { column-count: 1; }
+  .project-header { grid-template-columns: 1fr; gap: 2rem; margin-bottom: 3rem; }
+  .photo-stack { max-width: 300px; height: 400px; margin-bottom: 4rem; }
 
   .about-section { padding: 5rem 2rem; }
   

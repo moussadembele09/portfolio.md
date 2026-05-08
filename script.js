@@ -70,7 +70,13 @@
   }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
   fadeEls.forEach(el => fadeObs.observe(el));
 
-  // ── Lightbox ──
+  // ── Photo Stack — Badge de comptage ──
+  document.querySelectorAll('.photo-stack').forEach(stack => {
+    const count = stack.querySelectorAll('.eg-item').length;
+    stack.setAttribute('data-count', count + ' photo' + (count > 1 ? 's' : '') + ' — Cliquer pour explorer');
+  });
+
+  // ── Lightbox (navigation par projet) ──
   const lightbox = document.getElementById('lightbox');
   const lbImg    = document.getElementById('lbImg');
   const lbTitle  = document.getElementById('lbTitle');
@@ -79,16 +85,21 @@
   const lbPrev   = document.getElementById('lbPrev');
   const lbNext   = document.getElementById('lbNext');
 
-  const items = [...document.querySelectorAll('.eg-item')];
-  let current = 0;
+  let stackItems  = [];
+  let currentIdx  = 0;
 
-  function openLb(index) {
-    current = index;
-    const item = items[index];
-    const img = item.querySelector('img');
-    lbImg.src = img.src;
+  function showLbItem() {
+    const item = stackItems[currentIdx];
+    const img  = item.querySelector('img');
+    lbImg.src           = img.src;
     lbTitle.textContent = item.dataset.title || '';
     lbSub.textContent   = item.dataset.sub   || '';
+  }
+
+  function openLb(stack, index) {
+    stackItems = [...stack.querySelectorAll('.eg-item')];
+    currentIdx = index;
+    showLbItem();
     lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
   }
@@ -98,8 +109,11 @@
     document.body.style.overflow = '';
   }
 
-  items.forEach((item, i) => {
-    item.addEventListener('click', () => openLb(i));
+  // Chaque photo de la pile ouvre la lightbox en partant de cette photo
+  document.querySelectorAll('.photo-stack').forEach(stack => {
+    stack.querySelectorAll('.eg-item').forEach((item, i) => {
+      item.addEventListener('click', () => openLb(stack, i));
+    });
   });
 
   lbClose.addEventListener('click', closeLb);
@@ -107,11 +121,13 @@
 
   lbPrev.addEventListener('click', e => {
     e.stopPropagation();
-    openLb((current - 1 + items.length) % items.length);
+    currentIdx = (currentIdx - 1 + stackItems.length) % stackItems.length;
+    showLbItem();
   });
   lbNext.addEventListener('click', e => {
     e.stopPropagation();
-    openLb((current + 1) % items.length);
+    currentIdx = (currentIdx + 1) % stackItems.length;
+    showLbItem();
   });
 
   document.addEventListener('keydown', e => {
